@@ -1,0 +1,347 @@
+/* =======================
+                DEFAULT
+========================*/
+html, body, p, button, div, span{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Georgia, sans-serif;
+    outline: 0;
+}
+.hide{
+    display: none;
+}
+:root{
+    --blue: #3669ff;
+    --green:#008000;
+    --purple: #cc83ff;
+    --purple2: #d497ff;
+    --red: #FF3669;
+    --bshadow: 2px 2px 5px rgba(20, 20, 20, 0.5);
+}
+body{
+    background: #e0dae4;
+}
+
+/* ==================================
+                        Small Screen
+================================== */
+
+/* ===== WRAPPER =====*/
+#wrapper{
+    background: var(--purple);
+    max-width: 1024px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===== Header ===== */
+#header{
+    background: var(--blue);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#brand{
+    margin: auto 18px;
+}
+#brand img{
+    width: 80px;
+}
+#startReset{
+    background: var(--green);
+    width: 80px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px  solid var(--blue);
+    box-shadow: var(--bshadow);
+    padding: 5px 10px;
+}
+#startReset:active{
+    background: var(--green);
+    opacity: 0.6;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+/* ===== Infoboxes ===== */
+#infoboxes{
+    height: 90px;
+    width: 335px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+}
+#correctWrong, #timeRemaining, #lifeHeart, #score{
+    margin: 10px auto;
+    width: 130px;
+    height: 30px;
+    padding-top: 3px;
+    border-radius: 50px;
+    background: var(--purple2);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+#lifeHeart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+}
+.heartIcon img{
+    width: 20px;
+    justify-self: center;
+}
+
+/* ===== Content ===== */
+#content{
+    height: 350px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#displayContent{
+    background: #fff;
+    width: 300px;
+    height: 140px;
+    margin: 10px auto;
+    padding-top: 33px;
+    border-radius: 20px;
+    position: relative;
+}
+#displayQuestion{
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+#correctIcon img, #wrongIcon img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    left: 250px;
+}
+#answer{
+    width: 300px;
+    height: 60px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#box1, #box2, #box3, #box4{
+    background: var(--red);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #000;
+    font-family: Verdana, sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+#box1:active, #box2:active, #box3:active, #box4:active{
+    font-size: 35px;
+    opacity: 0.6;
+    height: 55px;
+    transition: 0.1s;
+}
+#box1{
+    width: 60px;
+    height: 60px;
+}
+#content p{
+    margin: 20px auto;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* ===== Game Over ===== */
+#gameOverBox{
+    background: #fff;
+    width: 340px;
+    height: 190px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: var(--bshadow);
+    z-index: 2;
+}
+#gameOverBox p{
+    font-size: 35px;
+    color: #000;
+    text-align: center;
+    padding-top: 37px;
+}
+#gameOverBox p:nth-child(2){
+    padding-top: 0;
+}
+#gameOverBox p:nth-child(3){
+    padding-top: 10px;
+    font-size: 20px;
+    color: var(--red);
+}
+#gameOverButton{
+    position: relative;
+}
+#gameOverBox button{
+    padding: 5px 10px;
+    font-size: 20px;
+    background: var(--red);
+    color: #fff;
+    position: absolute;
+    top: 135px;
+    left: 270px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--bshadow);
+}
+#gameOverBox button:active{
+    padding: 6px 12px;
+    font-size: 22px;
+    opacity: 0.6;
+}
+#gameOverScore{
+    color: var(--red);
+    font-family: cursive, sans-serif;
+}
+
+
+/* ==================================
+                        Large Screen
+================================== */
+
+@media (min-width: 768px) {
+
+    /* ===== Wrapper ===== */
+    #wrapper{
+        border-radius: 1px;
+        box-shadow: var(--bshadow), -2px -2px 5px rgba(20, 20, 20, 0.5);
+    }
+
+    /* ===== Header ===== */
+    #header{
+        width: auto;
+        height: 80px;
+    }
+    #brand{
+        margin: auto 22px;
+    }
+    #brand img{
+        width: 100px;
+    }
+    #startReset{
+        width: 90px;
+        font-size: 22px;
+    }
+    #startReset:hover{
+        opacity: 0.8;
+        font-size: 20px;
+        transition: 0.1s;
+    }
+
+    /* ===== Infoboxes ===== */
+    #infoboxes{
+        height: 80px;
+        width: 335px;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        align-content: center;
+        justify-content: center;
+    }
+
+    /* ===== Content ===== */
+    #content{
+        height: 450px;
+    }
+    #displayContent{
+        background: #fff;
+        width: 580px;
+        height: 220px;
+        padding-top: 70px;
+        position: relative;
+    }
+    #displayQuestion{
+        font-size: 28px;
+        font-family: Verdana;
+    }
+    #correctIcon img, #wrongIcon img{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 25px;
+        left: 500px;
+    }
+    #answer{
+        width: 560px;
+        height: 80px;
+    }
+    #box1, #box2, #box3, #box4{
+        width: 120px;
+        height: 60px;
+        border-radius: 20px;
+        font-size: 28px;
+    }
+    #box1:hover, #box2:hover, #box3:hover, #box4:hover{
+        font-size: 35px;
+        opacity: 0.7;
+        transition: 0.2s;
+    }
+    #box1:active, #box2:active, #box3:active, #box4:active{
+        font-size: 40px;
+        height: 50px;
+        transition: 0.2s;
+    }
+    #content p{
+        color: #fff;
+        margin: 0 auto;
+        font-size: 22px;
+        font-family: Verdana, sans-serif;
+    }
+
+    /* ===== Game Over ===== */
+    #gameOverBox{
+        width: 460px;
+        height: 250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+    #gameOverButton{
+        position: relative;
+    }
+    #gameOverBox button{
+        padding: 7px 20px;
+        font-size: 22px;
+        position: absolute;
+        top: 185px;
+        left: 360px;
+        border-radius: 25px;
+    }
+    #gameOverBox button:hover{
+        opacity: 0.8;
+        font-size: 18px;
+        transition: 0.2s;
+    }
+    #gameOverBox button:active{
+        margin-top: 5px;
+        padding: 7px 15px;
+    }
+}
+/* ==================================
+                        END!
+================================== */
